@@ -11,8 +11,7 @@ export default function Home() {
           <div>
             <h1 className="text-5xl font-bold">Codeverse.org</h1>
             <p className="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-              quasi. In deleniti eaque aut repudiandae et a id nisi.
+              A Leading Organization for Innovative Coders.
             </p>
           </div>
         </div>
@@ -24,9 +23,8 @@ export default function Home() {
             <Image src="" alt="codeverse.org" className="max-w-sm rounded-lg" width={500} height={500} />
           </figure>
           <div className="card-body">
-            <h2 className="card-title">Catchphrase</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet sequi repellendus, id magni cupiditate beatae officiis quos necessitatibus cumque officia pariatur magnam deserunt culpa? Rem perspiciatis soluta cumque tempora nam?</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet sequi repellendus, id magni cupiditate beatae officiis quos necessitatibus cumque officia pariatur magnam deserunt culpa? Rem perspiciatis soluta cumque tempora nam?</p>
+            <h2 className="card-title">A Leading Organization for Innovative Coders.</h2>
+            <p>Join our vibrant student-led community connecting passionate computer science and STEM enthusiasts! We welcome individuals of all experience levels and backgrounds. Our mission is to ignite a love for coding by launching tailored programs for students eager to dive into the world of technology. Additionally, we serve as a central hub for research, offering resources and opportunities for exploration.</p>
           </div>
         </div>
       </Section>
