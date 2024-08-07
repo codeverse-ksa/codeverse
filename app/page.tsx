@@ -38,7 +38,7 @@ export default function Home() {
             </svg>
             <input type="text" className="grow" placeholder="Email" />
           </label>
-          <button className="btn btn-primary">Add</button>
+          <button className="btn btn-primary text-white">Add</button>
         </div>
       </Section>
     </div>

@@ -9,7 +9,7 @@ const Navbar = () => {
             <div className="flex-none">
                 <ul className="menu menu-horizontal px-1 items-center gap-x-4">
                     <li><Link href="/programs">Programs</Link></li>
-                    <li><button className="btn btn-primary">Join List</button></li>
+                    <li><button className="btn btn-primary text-white">Join List</button></li>
                 </ul>
             </div>
         </div>

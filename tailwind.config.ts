@@ -10,7 +10,13 @@ const config: Config = {
     require("daisyui"),
   ],
   daisyui: {
-    themes: ["cmyk"],
+    themes: [
+      {
+        mytheme: {
+          "primary": "#072BC6",
+        },
+      },
+    ],
   },
 };
 export default config;
