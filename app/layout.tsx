@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 
 import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 const garet = localFont({
   src: "./Garet-Heavy.ttf",
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <div className="m-4">
           <Navbar />
           {children}
+          <Footer />
         </div>
       </body>
     </html>
