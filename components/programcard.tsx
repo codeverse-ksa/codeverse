@@ -1,16 +1,22 @@
+import { Program } from "@prisma/client";
 import Image from "next/image";
+import Link from "next/link";
 
-const ProgramCard = () => {
+type Props = {
+  program: Program;
+};
+
+const ProgramCard = ({ program }: Props) => {
   return (
     <div className="card card-compact bg-base-100 w-full shadow-xl">
         <figure>
-            <Image src="/logo.jpeg" alt="Demo" width={200} height={200} />
+            <Image src={program.image} alt="Demo" width={200} height={200} />
         </figure>
         <div className="card-body">
-            <h2 className="card-title">Quantum Computation</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit quidem, rerum, quo sapiente vel.</p>
+            <h2 className="card-title">{program.title}</h2>
+            <p>{program.description}</p>
             <div className="card-actions justify-end">
-                <button className="btn btn-primary text-white">Register</button>
+                <Link href={program.tally} className="btn btn-primary text-white">Register</Link>
             </div>
         </div>
     </div>

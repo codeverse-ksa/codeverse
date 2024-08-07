@@ -1,4 +1,5 @@
 import ProgramCard from "@/components/programcard";
+import { PROGRAMS } from "@/utils/sample";
 
 export default function Programs() {
     return (
@@ -17,12 +18,7 @@ export default function Programs() {
                 </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <ProgramCard />
-                <ProgramCard />
-                <ProgramCard />
-                <ProgramCard />
-                <ProgramCard />
-                <ProgramCard />
+                {PROGRAMS.map(program => <ProgramCard program={program} />)}
             </div>
         </div>
     );
