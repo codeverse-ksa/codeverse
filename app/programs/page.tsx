@@ -1,7 +1,11 @@
+"use client";
+
 import ProgramCard from "@/components/programcard";
 import { PROGRAMS } from "@/utils/sample";
+import { useState } from "react";
 
 export default function Programs() {
+    const [pagination, setPagination] = useState<Pagination>({ start: 0, end: 6 });
     return (
         <div className="mx-0 md:mx-8 lg:mx-16">
             <div className="w-full flex flex-col md:flex-row md:justify-between gap-4 mb-4">
@@ -18,7 +22,7 @@ export default function Programs() {
                 </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {PROGRAMS.map(program => <ProgramCard program={program} />)}
+                {PROGRAMS.slice(pagination.start, pagination.end).map(program => <ProgramCard program={program} />)}
             </div>
         </div>
     );
