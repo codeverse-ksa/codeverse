@@ -6,3 +6,13 @@ datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
+
+model Program {
+  slug        String   @id @unique
+  title       String
+  description String
+  tags        String
+  date        DateTime
+  tally       String
+  image       String
+}
