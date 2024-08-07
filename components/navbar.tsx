@@ -10,7 +10,7 @@ const Navbar = () => {
             <div className="flex-none">
                 <ul className="menu menu-horizontal px-1 items-center gap-x-4">
                     <li><Link href="/programs">Programs</Link></li>
-                    <li><button className="btn btn-primary text-white">Join List</button></li>
+                    <li><a href="#maillist"><button className="btn btn-primary text-white">Join List</button></a></li>
                 </ul>
             </div>
         </div>

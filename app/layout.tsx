@@ -19,7 +19,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body className={garet.className}>
-        <div className="m-4">
+        <div className="m-4 scroll-smooth">
           <Navbar />
           {children}
           <Footer />
