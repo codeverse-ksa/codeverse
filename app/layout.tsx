@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
+
 import Navbar from "@/components/navbar";
 
-const inter = Inter({ subsets: ["latin"] });
+const garet = localFont({
+  src: "./Garet-Heavy.ttf",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Codeverse.org",
@@ -13,7 +17,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={garet.className}>
         <div className="m-4">
           <Navbar />
           {children}
