@@ -41,6 +41,7 @@ export default function Home() {
           </figure>
           <div className="card-body">
             <h2 className="card-title">A Leading Organization for Innovative Coders.</h2>
+            <br />
             <p>Join our vibrant student-led community connecting passionate computer science and STEM enthusiasts! We welcome individuals of all experience levels and backgrounds. Our mission is to ignite a love for coding by launching tailored programs for students eager to dive into the world of technology. Additionally, we serve as a central hub for research, offering resources and opportunities for exploration.</p>
           </div>
         </div>
