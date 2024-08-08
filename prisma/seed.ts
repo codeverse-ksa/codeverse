@@ -1,6 +1,8 @@
+import { PrismaClient } from "@prisma/client";
 import { Program } from "@prisma/client";
+const prisma = new PrismaClient();
 
-export const PROGRAMS: Program[] = [
+const PROGRAMS: Program[] = [
     {
         slug: "introduction-to-quantum-computing",
         title: "Introduction to Quantum Computiung",
@@ -74,3 +76,21 @@ export const PROGRAMS: Program[] = [
         image: "/logo.jpeg",
     }
 ];
+
+async function main() {
+    await prisma.program.deleteMany({});
+    for (let program of PROGRAMS) {
+        await prisma.program.create({ data: program })
+    };
+    console.log("Seeding completed.");
+};
+
+main()
+    .then(async () => {
+        await prisma.$disconnect();
+    })
+    .catch(async (error) => {
+        console.error(error);
+        await prisma.$disconnect();
+        process.exit(1);
+    });

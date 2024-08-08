@@ -1,7 +1,7 @@
 "use client";
 
-import ProgramCard from "@/components/programcard";
-import { PROGRAMS } from "@/utils/sample";
+// import ProgramCard from "@/components/programcard";
+// import { PROGRAMS } from "@/utils/sample";
 import { useState } from "react";
 
 export default function Programs() {
@@ -22,7 +22,7 @@ export default function Programs() {
                 </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {PROGRAMS.slice(pagination.start, pagination.end).map(program => <ProgramCard program={program} />)}
+                {/* {PROGRAMS.slice(pagination.start, pagination.end).map(program => <ProgramCard program={program} />)} */}
             </div>
         </div>
     );
