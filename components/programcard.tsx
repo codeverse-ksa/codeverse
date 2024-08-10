@@ -19,7 +19,7 @@ const ProgramCard = ({ program }: Props) => {
               {program.tags.split(",").map(tag => <span className="badge badge-primary text-white text-xs">{tag}</span>)}
             </div>
             <div className="card-actions justify-between items-center mt-4">
-                <span className="text-gray-500">{(new Date(program.date)).toLocaleDateString("en-US", { day: "numeric", month: "long", year: "numeric" })}</span>
+                <span className="text-gray-500">{program.date}</span>
                 <Link href={program.tally} className="btn btn-primary text-white">Register</Link>
             </div>
         </div>

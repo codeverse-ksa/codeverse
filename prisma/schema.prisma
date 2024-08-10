@@ -8,11 +8,11 @@ datasource db {
 }
 
 model Program {
-  slug        String   @id @unique
+  slug        String @id @unique
   title       String
   description String
   tags        String
-  date        DateTime @default(now())
+  date        String
   tally       String
   image       String
 }
