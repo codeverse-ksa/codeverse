@@ -1,9 +1,7 @@
 import Link from "next/link";
 import Logo from "./logo";
-import { isAdmin } from "@/utils/helpers";
 
 const Navbar = () => {
-    console.log(isAdmin());
     return (
         <div className="navbar bg-base-100">
             <div className="flex-1">
