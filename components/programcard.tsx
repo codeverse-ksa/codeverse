@@ -10,7 +10,7 @@ const ProgramCard = ({ program }: Props) => {
   return (
     <div className="card card-compact bg-base-100 w-full shadow-xl">
         <figure>
-            <Image src={program.image} alt="Demo" width={200} height={200} />
+            <Image src={`/images/${program.image}`} alt={program.title} width={500} height={500} />
         </figure>
         <div className="card-body">
             <h2 className="card-title">{program.title}</h2>
