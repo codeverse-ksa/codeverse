@@ -3,6 +3,7 @@
 import Header from "@/components/header";
 import Section from "@/components/section";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Home() {
@@ -24,9 +25,8 @@ export default function Home() {
     <div className="m-4">
       <div className="hero min-h-screen">
         <div className="hero-content flex-col lg:flex-row">
-          <Image src="" alt="codeverse.org" className="max-w-sm rounded-lg" width={1000} height={1000} />
           <div>
-            <h1 className="text-5xl font-bold">Codeverse.org</h1>
+            <h1 className="text-5xl font-bold text-primary">Codeverse.org</h1>
             <p className="py-6">
               A Leading Organization for Innovative Coders.
             </p>
@@ -36,13 +36,14 @@ export default function Home() {
       <Section>
         <Header title="About" />
         <div className="card lg:card-side bg-base-100">
-          <figure>
-            <Image src="" alt="codeverse.org" className="max-w-sm rounded-lg" width={500} height={500} />
+          <figure className="w-full md:w-1/3">
+            <Image src="/about.jpeg" alt="codeverse.org" className="max-w-sm rounded-lg" width={500} height={500} />
           </figure>
-          <div className="card-body">
+          <div className="card-body w-full md:w-2/3">
             <h2 className="card-title">A Leading Organization for Innovative Coders.</h2>
             <br />
             <p>Join our vibrant student-led community connecting passionate computer science and STEM enthusiasts! We welcome individuals of all experience levels and backgrounds. Our mission is to ignite a love for coding by launching tailored programs for students eager to dive into the world of technology. Additionally, we serve as a central hub for research, offering resources and opportunities for exploration.</p>
+            <p>Check out previous and upcoming events on our <Link href="/programs" className="link link-hover link-primary">programs</Link> page.</p>
           </div>
         </div>
       </Section>
