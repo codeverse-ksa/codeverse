@@ -8,16 +8,16 @@ import { useState } from "react";
 
 export default function Home() {
   const [loading, setLoading] = useState<boolean>(false);
-  const [error, setError] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const submit = async () => {
     try {
-      setError("");
+      setMessage("");
       setLoading(true);
       await fetch("/api/submit", { method: "POST", headers: { "Accept": "application/json", "Content-Type": "application/json" }, body: JSON.stringify({ email }) });
-      setError("Email added to mailing list!");
+      setMessage("Email added to mailing list!");
     } catch (error) {
-      setError("Something went wrong...");
+      setMessage("Something went wrong...");
     } finally {
       setLoading(false);
       setEmail("");
@@ -62,7 +62,7 @@ export default function Home() {
             </label>
             <button className="btn btn-primary text-white" onClick={submit}>{loading ? <span className="loading loading-spinner loading-md"></span> : "Add"}</button>
           </div>
-          <span className="text-success text-sm">{error}</span>
+          <span className="text-success text-sm">{message}</span>
         </div>
       </Section>
     </div>
