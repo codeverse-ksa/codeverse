@@ -8,14 +8,16 @@ import { useState } from "react";
 
 export default function Home() {
   const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const submit = async () => {
     try {
+      setError("");
       setLoading(true);
       await fetch("/api/submit", { method: "POST", headers: { "Accept": "application/json", "Content-Type": "application/json" }, body: JSON.stringify({ email }) });
-      alert("Email added to mailing list!");
+      setError("Email added to mailing list!");
     } catch (error) {
-      alert("Something went wrong...");
+      setError("Something went wrong...");
     } finally {
       setLoading(false);
       setEmail("");
@@ -49,15 +51,18 @@ export default function Home() {
       </Section>
       <Section>
         <Header title="Mail List" />
-        <div id="maillist" className="h-60 flex justify-center items-center gap-x-4">
-          <label className="input input-bordered flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="h-4 w-4 opacity-70">
-              <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
-              <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
-            </svg>
-            <input disabled={loading} type="text" className="grow" placeholder="Email" value={email} onChange={event => setEmail(event.target.value)} />
-          </label>
-          <button className="btn btn-primary text-white" onClick={submit}>{loading ? <span className="loading loading-spinner loading-md"></span> : "Add"}</button>
+        <div id="maillist" className="h-60 flex flex-col justify-center items-center gap-y-4">
+          <div className="flex justify-center items-center gap-x-4">
+            <label className="input input-bordered flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="h-4 w-4 opacity-70">
+                <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
+                <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
+              </svg>
+              <input disabled={loading} type="text" className="grow" placeholder="Email" value={email} onChange={event => setEmail(event.target.value)} />
+            </label>
+            <button className="btn btn-primary text-white" onClick={submit}>{loading ? <span className="loading loading-spinner loading-md"></span> : "Add"}</button>
+          </div>
+          <span className="text-success text-sm">{error}</span>
         </div>
       </Section>
     </div>
