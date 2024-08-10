@@ -12,7 +12,7 @@ model Program {
   title       String
   description String
   tags        String
-  date        DateTime
+  date        DateTime @default(now())
   tally       String
   image       String
 }
