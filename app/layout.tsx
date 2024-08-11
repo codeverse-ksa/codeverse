@@ -12,7 +12,10 @@ const garet = localFont({
 
 export const metadata: Metadata = {
   title: "Codeverse.org",
-  description: "",
+  description: "A Leading Organization for Innovative Coders.",
+  icons: {
+    icon: "logo.jpeg/",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
