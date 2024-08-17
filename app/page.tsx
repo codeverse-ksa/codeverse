@@ -6,18 +6,27 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
+type Message = {
+  message: string;
+  status: "success" | "error";
+};
+
 export default function Home() {
   const [loading, setLoading] = useState<boolean>(false);
-  const [message, setMessage] = useState<string>("");
+  const [message, setMessage] = useState<Message>({ message: "", status: "success" });
   const [email, setEmail] = useState<string>("");
   const submit = async () => {
     try {
-      setMessage("");
+      setMessage({ message: "", status: "success" });
+      if (!email.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
+        setMessage({ message: "Invalid email!", status: "error" });
+        return;
+      };
       setLoading(true);
       await fetch("/api/submit", { method: "POST", headers: { "Accept": "application/json", "Content-Type": "application/json" }, body: JSON.stringify({ email }) });
-      setMessage("Email added to mailing list!");
+      setMessage({ message: "Email added to mailing list!", status: "success" });
     } catch (error) {
-      setMessage("Something went wrong...");
+      setMessage({ message: "Something went wrong...", status: "error" });
     } finally {
       setLoading(false);
       setEmail("");
@@ -62,7 +71,7 @@ export default function Home() {
             </label>
             <button className="btn btn-primary text-white" onClick={submit}>{loading ? <span className="loading loading-spinner loading-md"></span> : "Add"}</button>
           </div>
-          <span className="text-success text-sm">{message}</span>
+          <span className={`text-sm ${message.status === "error" ? "text-error" : "text-success"}`}>{message.message}</span>
         </div>
       </Section>
     </div>
