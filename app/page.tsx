@@ -33,11 +33,11 @@ export default function Home() {
     };
   };
   return (
-    <div className="m-4">
+    <div>
       <div className="hero h-screen">
         <div className="hero-content flex-col lg:flex-row">
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold text-primary text-center">Codeverse.org</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-primary text-center">Codeverse</h1>
             <p className="py-6 text-center">
               A Leading Organization for Innovative Coders.
             </p>
@@ -46,11 +46,11 @@ export default function Home() {
       </div>
       <Section>
         <Header title="About" />
-        <div className="card card-compact lg:card-side bg-base-100 mx-4">
-          <figure className="">
+        <div className="card card-compact lg:card-side bg-base-100">
+          <figure>
             <Image src="/about.jpeg" alt="codeverse.org" className="min-w-sm rounded-lg" width={1000} height={1000} />
           </figure>
-          <div className="card-body">
+          <div className="card-body p-0">
             <h2 className="card-title">A Leading Organization for Innovative Coders.</h2>
             <br />
             <p>Join our vibrant student-led community connecting passionate computer science and STEM enthusiasts! We welcome individuals of all experience levels and backgrounds. Our mission is to ignite a love for coding by launching tailored programs for students eager to dive into the world of technology. Additionally, we serve as a central hub for research, offering resources and opportunities for exploration.</p>
