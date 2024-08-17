@@ -4,7 +4,7 @@ Codeverse's landing page!
 
 ## Stack
 
-![Stack](https://skillicons.dev/icons?i=ts,next,tailwind,sqlite,gcp)
+![Stack](https://skillicons.dev/icons?i=ts,next,tailwind,sqlite,gcp,netlify)
 
 ## Adding a Program
 
