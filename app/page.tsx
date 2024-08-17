@@ -34,11 +34,11 @@ export default function Home() {
   };
   return (
     <div className="m-4">
-      <div className="hero min-h-screen">
+      <div className="hero h-screen">
         <div className="hero-content flex-col lg:flex-row">
           <div>
-            <h1 className="text-5xl font-bold text-primary">Codeverse.org</h1>
-            <p className="py-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-primary text-center">Codeverse.org</h1>
+            <p className="py-6 text-center">
               A Leading Organization for Innovative Coders.
             </p>
           </div>
@@ -46,11 +46,11 @@ export default function Home() {
       </div>
       <Section>
         <Header title="About" />
-        <div className="card lg:card-side bg-base-100">
-          <figure className="w-full md:w-1/3">
-            <Image src="/about.jpeg" alt="codeverse.org" className="max-w-sm rounded-lg" width={500} height={500} />
+        <div className="card card-compact lg:card-side bg-base-100 mx-4">
+          <figure className="">
+            <Image src="/about.jpeg" alt="codeverse.org" className="min-w-sm rounded-lg" width={1000} height={1000} />
           </figure>
-          <div className="card-body w-full md:w-2/3">
+          <div className="card-body">
             <h2 className="card-title">A Leading Organization for Innovative Coders.</h2>
             <br />
             <p>Join our vibrant student-led community connecting passionate computer science and STEM enthusiasts! We welcome individuals of all experience levels and backgrounds. Our mission is to ignite a love for coding by launching tailored programs for students eager to dive into the world of technology. Additionally, we serve as a central hub for research, offering resources and opportunities for exploration.</p>
@@ -61,7 +61,7 @@ export default function Home() {
       <Section>
         <Header title="Mail List" />
         <div id="maillist" className="h-60 flex flex-col justify-center items-center gap-y-4">
-          <div className="flex justify-center items-center gap-x-4">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-4">
             <label className="input input-bordered flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="h-4 w-4 opacity-70">
                 <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
