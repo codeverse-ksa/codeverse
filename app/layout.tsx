@@ -14,7 +14,11 @@ export const metadata: Metadata = {
   title: "Codeverse.org",
   description: "A Leading Organization for Innovative Coders.",
   icons: {
-    icon: "logo.jpeg/",
+    icon: "/logo.jpeg",
+  },
+  metadataBase: new URL("https://codeverseorg.netlify.app"),
+  openGraph: {
+    images: "/logo.jpeg",
   },
 };
 
